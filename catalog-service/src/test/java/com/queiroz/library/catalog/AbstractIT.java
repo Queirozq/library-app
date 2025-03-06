@@ -1,6 +1,5 @@
 package com.queiroz.library.catalog;
 
-
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 import io.restassured.RestAssured;
@@ -12,6 +11,7 @@ import org.springframework.context.annotation.Import;
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @Import(TestcontainersConfiguration.class)
 public abstract class AbstractIT {
+
     @LocalServerPort
     int port;
 

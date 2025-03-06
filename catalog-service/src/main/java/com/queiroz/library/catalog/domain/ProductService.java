@@ -1,6 +1,7 @@
 package com.queiroz.library.catalog.domain;
 
 import com.queiroz.library.catalog.ApplicationProperties;
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -34,5 +35,9 @@ public class ProductService {
                 pageResult.isLast(),
                 pageResult.hasNext(),
                 pageResult.hasPrevious());
+    }
+
+    public Optional<Product> findByCode(String code) {
+        return productRepository.findByCode(code).map(ProductMapper::toProduct);
     }
 }
